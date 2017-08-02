@@ -7,7 +7,8 @@ window.onload = function () {
     //获取运动目标元素，并初始化其样式
     var box = document.getElementById("box");
     //默认文字
-    var strArr = ['这', '里', '是', '七', '个', '字', '啊','多','放','几','个','字','比','较','好','看'];
+    var strArr = ['这', '里', '是', '七', '个', '字', '啊', '多', '放', '几', '个', '字', '比', '较', '好', '看'];
+    var colorArr = ['red', 'green', 'blue', 'pink', 'skyblue', 'deeppink', 'purple', 'yellow', 'orange', '#CDCD00', '#9B30FF', '#9AFF9A', '#00EE00', '#CD00CD', '#CD99CD']
     //根据数组间隔时间创建标签
     var i = 0;
     var date = 500  //单位毫秒
@@ -19,6 +20,7 @@ window.onload = function () {
             i++
         } else {
             for (let j = 0; j < box.children.length; j++) {
+                box.children[j].style.color = colorArr[j]
                 move(box.children[j]);
             }
             clearInterval(create)
@@ -54,6 +56,6 @@ window.onload = function () {
             obj.style.position = 'absolute';
             obj.style.left = obj.offsetLeft + speedX + "px";
             obj.style.top = obj.offsetTop + speedY + "px";
-        }, 30);
+        }, 40);
     }
 }
